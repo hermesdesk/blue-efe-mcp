@@ -1,0 +1,28 @@
+test_generated_clients_share_absolute_entrypoint_and_preserve_existing (test_config.ConfigTests.test_generated_clients_share_absolute_entrypoint_and_preserve_existing) ... ok
+test_non_bmp_launch_path_is_valid_toml (test_config.ConfigTests.test_non_bmp_launch_path_is_valid_toml) ... ok
+test_bounds (test_engine.EngineTests.test_bounds) ... ok
+test_budget_and_known_correlated_groups (test_engine.EngineTests.test_budget_and_known_correlated_groups) ... ok
+test_concurrent_stale_updates_do_not_both_apply (test_engine.EngineTests.test_concurrent_stale_updates_do_not_both_apply) ... ok
+test_duplicate_source_costs_without_second_bayes_update (test_engine.EngineTests.test_duplicate_source_costs_without_second_bayes_update) ... ok
+test_failure_costs_and_marks_action_consumed (test_engine.EngineTests.test_failure_costs_and_marks_action_consumed) ... ok
+test_impossible_observation_stops_with_unchanged_posterior (test_engine.EngineTests.test_impossible_observation_stops_with_unchanged_posterior) ... ok
+test_observation_xor_and_strict_integer (test_engine.EngineTests.test_observation_xor_and_strict_integer) ... ok
+test_plan_matches_original_and_observe_then_stop (test_engine.EngineTests.test_plan_matches_original_and_observe_then_stop) ... ok
+test_retries_are_idempotent_conflicting_event_rejected (test_engine.EngineTests.test_retries_are_idempotent_conflicting_event_rejected) ... ok
+test_snapshot_not_mutable_alias (test_engine.EngineTests.test_snapshot_not_mutable_alias) ... ok
+test_stale_wrong_action_invalid_observation_do_not_mutate (test_engine.EngineTests.test_stale_wrong_action_invalid_observation_do_not_mutate) ... ok
+test_unknown_and_closed_sessions_and_isolation (test_engine.EngineTests.test_unknown_and_closed_sessions_and_isolation) ... ok
+test_validation_rejects_bad_models (test_engine.EngineTests.test_validation_rejects_bad_models) ... ok
+test_actual_protocol_round_trip_errors_and_resources (test_stdio.StdioTests.test_actual_protocol_round_trip_errors_and_resources) ... <package-root>\.venv\Lib\site-packages\pydantic_settings\sources\utils.py:47: IncompleteFieldDefinitionWarning: Field 'lifespan' has an incomplete definition: its annotation contains an unresolved forward reference, so settings sources may fail to correctly resolve its value. Call `model_rebuild()` on the model where the field is defined, once all the referenced types are defined.
+  warnings.warn(
+ok
+test_two_host_processes_do_not_share_sessions (test_stdio.StdioTests.test_two_host_processes_do_not_share_sessions) ... <package-root>\.venv\Lib\site-packages\pydantic_settings\sources\utils.py:47: IncompleteFieldDefinitionWarning: Field 'lifespan' has an incomplete definition: its annotation contains an unresolved forward reference, so settings sources may fail to correctly resolve its value. Call `model_rebuild()` on the model where the field is defined, once all the referenced types are defined.
+  warnings.warn(
+<package-root>\.venv\Lib\site-packages\pydantic_settings\sources\utils.py:47: IncompleteFieldDefinitionWarning: Field 'lifespan' has an incomplete definition: its annotation contains an unresolved forward reference, so settings sources may fail to correctly resolve its value. Call `model_rebuild()` on the model where the field is defined, once all the referenced types are defined.
+  warnings.warn(
+ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 1.815s
+
+OK

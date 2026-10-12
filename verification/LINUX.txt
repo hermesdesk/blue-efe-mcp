@@ -1,0 +1,4 @@
+Linux check, 2026-10-12 (independent of the Windows release run)
+- Python 3.13, fresh venv, requirements.txt (mcp==1.26.0)
+- python -m unittest discover -s tests: 17 tests, OK (including real stdio MCP round trip)
+- macOS still untested.

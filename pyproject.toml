@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "blue-efe-mcp"
+version = "0.1.0"
+description = "Local Bayesian context acquisition controller for MCP hosts"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["mcp==1.26.0", "pydantic>=2.11,<3"]
+
+[project.scripts]
+blue-efe-mcp = "blue_efe_mcp.server:main"
+
+[tool.setuptools.packages.find]
+include = ["blue_efe_mcp*"]

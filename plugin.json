@@ -1,0 +1,19 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "blue-efe-mcp",
+  "version": "0.1.0",
+  "description": "Local Bayesian context acquisition decision tools based on Blue EFE v0.4.0",
+  "author": {"name": "Blue / Jarvis"},
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Blue EFE Controller",
+        "shortDescription": "Choose the next context action",
+        "longDescription": "Compare information value and costs, update finite Bayesian beliefs, and inspect the decision history. Local stdio; no external actions.",
+        "developerName": "Blue / Jarvis",
+        "category": "Productivity",
+        "defaultPrompt": "Use Blue EFE to evaluate whether more context is worth its cost. State assumptions explicitly."
+      }
+    }
+  }
+}

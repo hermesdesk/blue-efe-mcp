@@ -1,0 +1,9 @@
+{
+  "base_version": "Blue EFE v0.4.0",
+  "sha256": "2a13dc23a176e19d49827450210d8e9fd0520323479b4a63d53d835a8626f8eb",
+  "byte_identical": true,
+  "original_v030_recovered": false,
+  "paper": "https://arxiv.org/pdf/2608.19202v1",
+  "wrapper_version": "0.1.0",
+  "scope": "Finite one-step controller; MCP interface is our extension."
+}

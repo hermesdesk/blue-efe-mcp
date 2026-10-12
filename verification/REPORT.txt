@@ -1,0 +1,42 @@
+Blue EFE MCP 0.1.0 - release verification, 2026-10-12
+
+VERIFIED
+- Built wheel blue_efe_mcp-0.1.0-py3-none-any.whl with official MCP SDK 1.26.0.
+- Extracted source ZIP into a fresh workspace directory.
+- Ran its setup.ps1 using Python 3.12.14 on Windows; exit code 0.
+- Installed all pinned runtime dependencies into the fresh .venv.
+- Generated Codex, Claude Desktop and Claude Code configuration snippets.
+- Ran all 17 unit/integration tests from the fresh extraction: 17 passed,
+  0 failed, 1.815 seconds. Full output: tests-fresh-extract.txt.
+- Real stdio client initialized server, listed all six tools, exercised
+  create/plan/observe/retry/inspect/close, read the guide, checked errors,
+  and verified process isolation.
+- Installed built wheel separately, outside source package; real MCP client
+  reached six tools and completed the synthetic demo. See wheel-smoke.json.
+- Demo: first action read; posterior [0.010000000000000009, 0.99];
+  modeled cost 0.02; terminal ANSWER:paid. These are synthetic model outputs,
+  not real-world accuracy measurements.
+- Core copied byte-for-byte from Blue EFE v0.4.0; see CORE_PROVENANCE.json.
+- Independent review found a TOML Unicode path issue; reproduced in a failing
+  test and fixed. Concurrent host-execution limitations documented explicitly.
+
+NOT VERIFIED / NOT PERFORMED
+- No live Codex or Claude configuration registration, UI tool discovery or
+  end-to-end real task in either application. Configuration formats checked
+  against official documentation; Codex CLI syntax also checked locally.
+- No macOS/Linux run, API provider call, vault access, vault modification,
+  persistent storage, or deployment. No source v0.3.0 recovered.
+- Packaging does not establish full paper replication or improve calibration.
+- Metadata supplied by callers is not independently authenticated.
+
+KNOWN ENVIRONMENT NOTE
+The pinned SDK with current pydantic-settings emits an unresolved lifespan
+forward-reference warning to stderr. Protocol tests pass. Windows development
+sandbox blocked async stdio tests; tests above ran as normal local processes.
+
+SOURCE REFERENCES
+https://developers.openai.com/codex/mcp
+https://code.claude.com/docs/en/mcp
+https://modelcontextprotocol.io/docs/develop/connect-local-servers
+https://github.com/modelcontextprotocol/python-sdk/tree/v1.26.0
+https://arxiv.org/pdf/2608.19202v1

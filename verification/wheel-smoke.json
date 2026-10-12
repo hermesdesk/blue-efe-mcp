@@ -1,0 +1,19 @@
+{
+  "installed_wheel_protocol": "PASS",
+  "tools": [
+    "efe_example",
+    "efe_create",
+    "efe_plan",
+    "efe_observe",
+    "efe_inspect",
+    "efe_close"
+  ],
+  "first_action": "read",
+  "posterior": [
+    0.010000000000000009,
+    0.99
+  ],
+  "spent": 0.02,
+  "terminal": "ANSWER:paid",
+  "synthetic": true
+}
