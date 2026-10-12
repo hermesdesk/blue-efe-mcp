@@ -15,7 +15,19 @@ Before answering, an agent can ask the user, read a file, search, or verify. Eac
 
 **What it is not:** a multi-step planner, a calibrated model of your sources, or proof that EFE beats other policies. The numbers are only as good as the likelihoods and losses you supply. In the paper authors' own prompt-optimization data, EFE did not outperform round-robin (194 vs 195 / 200); the value is principled, auditable accounting of when to ask.
 
-Quick start: `python -m venv .venv`, `.venv/bin/pip install -r requirements.txt`, `python configure.py`, then register the generated entry in your MCP client and call `efe_example`.
+## When it is actually worth using
+
+Use it as a **gate in front of important actions**, not on every step. It pays off when all three hold:
+
+1. **The decision repeats.** Build the model once and reuse it, instead of letting the LLM rebuild it every turn. Examples: "has this invoice been paid?", "is this failing test caused by the code or the environment?"
+2. **A wrong action is expensive or irreversible**: sending an email, moving money, deleting data, deploying. For cheap, reversible steps, just let the model act.
+3. **You record real outcomes**, so guessed likelihoods are gradually replaced by measured ones. That is what turns "math on assumptions" into real reliability. This repo does not do that yet; you have to build the outcome log yourself.
+
+Put on every small step, it will most likely make the agent slower and more expensive without making it more accurate.
+
+## Quick start
+
+ `python -m venv .venv`, `.venv/bin/pip install -r requirements.txt`, `python configure.py`, then register the generated entry in your MCP client and call `efe_example`.
 
 Tools: `efe_example`, `efe_create`, `efe_plan`, `efe_observe`, `efe_inspect`, `efe_close`. Licensed MIT. Not affiliated with the paper's authors.
 
@@ -31,6 +43,16 @@ tính chi phí và xuất nhật ký. Server không tự đọc vault, tìm web 
 Đây là gói đã kiểm tra giao thức stdio bằng MCP client thật. Chưa đăng ký vào
 cấu hình Codex/Claude đang dùng, chưa kiểm tra bằng một phiên UI trong hai ứng dụng.
 Các file cấu hình được tạo để người dùng ghép thêm, không ghi đè cấu hình hiện có.
+
+## Khi nào thực sự đáng dùng
+
+Dùng như một **cổng kiểm soát đặt trước các hành động quan trọng**, không phải cho mọi bước. Nó có ích khi thỏa cả ba điều kiện:
+
+1. **Loại quyết định lặp lại nhiều lần**, để dựng mô hình mẫu một lần rồi tái sử dụng, thay vì để model dựng lại mỗi lượt. Ví dụ: "hóa đơn này đã thanh toán chưa", "test fail là do code hay do môi trường".
+2. **Hành động sai thì đắt hoặc không đảo ngược được**: gửi email, chuyển tiền, xóa dữ liệu, deploy. Với bước rẻ và sửa được, cứ để model tự làm.
+3. **Có ghi lại kết quả thực tế** để dần thay các con số đoán bằng con số đo được. Đây là bước biến công cụ từ "toán trên giả định" thành thứ có độ tin cậy thật. Repo hiện chưa hỗ trợ việc này, bạn phải tự xây.
+
+Dùng cho mọi bước nhỏ thì nhiều khả năng làm agent chậm và tốn hơn mà không chính xác hơn.
 
 ## Cài trên Windows
 
